@@ -1,0 +1,17 @@
+# Ignore environment variable files (credentials, secrets, etc.)
+.env
+.env.local
+.env.*.local
+
+# Ignore temporary Capybara screenshots and HTML files
+tmp/
+
+# Ignore bundler config and installed gems (local/vendor)
+.bundle
+/vendor/bundle
+*.gem
+
+# Ignore editor/OS generated files
+*.swp
+*.swo
+*.DS_Store
