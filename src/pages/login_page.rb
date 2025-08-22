@@ -6,23 +6,29 @@ require_relative 'base_page'
 # and provides methods to interact with it.
 class LoginPage < BasePage
   # Locators
-  EMAIL_FIELD = '#user_email'
+  EMAIL_FIELD    = '#user_email'
   PASSWORD_FIELD = '#user_password'
-  SIGN_IN_BUTTON = '#submitBtn'
+  SIGN_IN_BUTTON = '#submitBtn' # <input id="submitBtn" value="Sign in">
+
+  # Opens the Sign in page and returns self (fluent API)
+  def visit_login
+    visit_url('/users/sign_in')
+    self
+  end
 
   # Fill email
   def fill_email(email)
-    page.find(EMAIL_FIELD).set(email)
+    page.find(EMAIL_FIELD, wait: 10).set(email)
   end
 
   # Fill password
   def fill_password(password)
-    page.find(PASSWORD_FIELD).set(password)
+    page.find(PASSWORD_FIELD, wait: 10).set(password)
   end
 
   # Click Sign in
   def submit
-    page.find(SIGN_IN_BUTTON).click
+    page.find(SIGN_IN_BUTTON, wait: 10).click
   end
 
   # High-level action: login with email + password
@@ -30,5 +36,10 @@ class LoginPage < BasePage
     fill_email(email)
     fill_password(password)
     submit
+  end
+
+  # Alias for readability in specs
+  def login_as(email, password)
+    login(email, password)
   end
 end

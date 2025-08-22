@@ -1,23 +1,30 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require_relative '../../src/pages/login_page'
 
-RSpec.describe 'Login', type: :feature do
+# Covers the authentication happy path:
+#  1) Open the Sign in page
+#  2) Submit valid credentials
+#  3) Verify we land on the Appointments calendar
+#  4) Verify a key UI control is visible ("Today" button)
+RSpec.describe 'Login feature', type: :feature do
+  # Test inputs come from environment variables (.env loaded by spec_helper)
   let(:email)    { ENV.fetch('SIMPLEPRACTICE_EMAIL') }
   let(:password) { ENV.fetch('SIMPLEPRACTICE_PASSWORD') }
   let(:login)    { LoginPage.new }
 
-  it 'logs in and lands on the appointments calendar' do
-    # Arrange
-    login.visit_url('/users/sign_in')
+  it 'authenticates and lands on the Appointments calendar' do
+    # STEP 1 — Open the Sign in page
+    login.visit_login
 
-    # Act
-    login.login(email, password)
+    # STEP 2 — Submit credentials (happy path)
+    login.login_as(email, password)
 
-    # Assert: URL contains /calendar/appointments (ignore domain & query)
+    # STEP 3 — Assert we are redirected to the Appointments calendar
     expect(page).to have_current_path(%r{/calendar/appointments}, wait: 15, ignore_query: true)
 
-    # Assert 2: the Calendar UI is visible (button 'Today' present)
-    # Capybara matches <button> by its visible text
+    # STEP 4 — Assert a key calendar control is visible: "Today" button
     expect(page).to have_button('Today', wait: 10)
   end
 end

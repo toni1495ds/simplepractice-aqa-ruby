@@ -8,7 +8,7 @@ class BasePage
     Capybara.current_session
   end
 
-  # Visit by path
+  # Visit by path; SIMPLEPRACTICE_BASE_URL must be set in .env
   def visit_url(path = '/')
     base = ENV['SIMPLEPRACTICE_BASE_URL']
     page.visit("#{base}#{path}")
