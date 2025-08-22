@@ -116,5 +116,3 @@ Finished in 36.8 seconds (files took 0.99426 seconds to load)
 - [Tasks Happy Path Checklist](./TASKS_CHECKLIST.md): Exploratory test scenarios covering creation, completion, filters, and sorting of tasks.
 
 ```
-
-```
