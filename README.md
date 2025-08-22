@@ -3,14 +3,14 @@
 Automated QA project using **Ruby + RSpec + Capybara**.  
 Includes an initial authentication (login) flow for [SimplePractice](https://secure.simplepractice.com).
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - [Ruby](https://www.ruby-lang.org/)
 - [RSpec](https://rspec.info/)
 - [Capybara](https://teamcapybara.github.io/capybara/)
 - [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
 
-## 📂 Project Structure
+## Project Structure
 
 ```bash
 
@@ -69,7 +69,7 @@ With browser visible:
 HEADLESS=false bundle exec rspec
 ```
 
-## 📝 Features Covered
+## Features Covered
 
 ### Login flow
 
@@ -89,7 +89,7 @@ Automatically saves:
 - `failure_<name>_<timestamp>.png` (screenshot)
 - `failure_<name>_<timestamp>.html` (page source)
 
-## ✅ Best Practices Applied
+## Best Practices Applied
 
 - **Page Object Model (POM):** keeps locators & actions encapsulated.
 - **Contexts:** reusable login/session setup.
@@ -97,7 +97,7 @@ Automatically saves:
 - **Unique test data:** avoids collisions across runs.
 - **Rubocop linting:** ensures clean & consistent Ruby code.
 
-## 📸 Example Run
+## Example Run
 
 ```bash
 HEADLESS=false bundle exec rspec spec/features/tasks_spec.rb
@@ -109,4 +109,12 @@ HEADLESS=false bundle exec rspec spec/features/tasks_spec.rb
 ...
 Finished in 36.8 seconds (files took 0.99426 seconds to load)
 3 examples, 0 failures
+```
+
+## Test Checklists
+
+- [Tasks Happy Path Checklist](./TASKS_CHECKLIST.md): Exploratory test scenarios covering creation, completion, filters, and sorting of tasks.
+
+```
+
 ```

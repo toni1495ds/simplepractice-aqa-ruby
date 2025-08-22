@@ -3,7 +3,7 @@
 require 'spec_helper'
 require_relative '../../src/pages/login_page'
 
-# Covers the authentication happy path:
+# Covers the authentication path:
 #  1) Open the Sign in page
 #  2) Submit valid credentials
 #  3) Verify we land on the Appointments calendar

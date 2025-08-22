@@ -2,7 +2,9 @@
 
 require 'spec_helper'
 
-RSpec.describe 'Tasks – Quick flow', type: :feature do
+# This spec validates the "Quick Add Task" flow.
+# Covers: login → navigate to Tasks → create quick task → complete → verify in Completed.
+RSpec.describe 'Tasks - Quick flow', type: :feature do
   include_context 'tasks_context'
 
   it 'creates and completes a task via the Quick Task flow' do

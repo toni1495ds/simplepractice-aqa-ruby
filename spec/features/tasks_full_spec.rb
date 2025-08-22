@@ -2,7 +2,9 @@
 
 require 'spec_helper'
 
-RSpec.describe 'Tasks – Full form flow', type: :feature do
+# This spec validates the "Full Form Task" flow.
+# Covers: login → navigate to Tasks → create task with title+description → complete → verify in Completed.
+RSpec.describe 'Tasks - Full form flow', type: :feature do
   include_context 'tasks_context'
 
   it 'creates and completes a task via the Create Task form' do
