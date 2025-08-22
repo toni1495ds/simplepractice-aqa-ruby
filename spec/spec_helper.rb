@@ -24,14 +24,12 @@ RSpec.configure do |config|
     name = example.metadata[:full_description].gsub(/[^\w]+/, '_')[0, 80]
 
     begin
-      page.save_screenshot("failure_#{name}_#{ts}.png", full: true)
-    rescue StandardError
-      nil
-    end
-    begin
+      # rubocop:disable Lint/Debugger
+      save_screenshot("failure_#{name}_#{ts}.png", full: true)
       save_page("failure_#{name}_#{ts}.html")
+      # rubocop:enable Lint/Debugger
     rescue StandardError
-      nil
+      # ignore failures when saving artifacts
     end
   end
 end

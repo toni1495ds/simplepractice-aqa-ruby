@@ -8,7 +8,7 @@ class LoginPage < BasePage
   # Locators
   EMAIL_FIELD    = '#user_email'
   PASSWORD_FIELD = '#user_password'
-  SIGN_IN_BUTTON = '#submitBtn' # <input id="submitBtn" value="Sign in">
+  SIGN_IN_BUTTON = '#submitBtn'
 
   # Opens the Sign in page and returns self (fluent API)
   def visit_login
