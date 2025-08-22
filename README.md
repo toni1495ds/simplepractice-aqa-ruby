@@ -12,6 +12,8 @@ Includes an initial authentication (login) flow for [SimplePractice](https://sec
 
 ## 📂 Project Structure
 
+```bash
+
 spec/
 ├── features/ # Feature tests (RSpec)
 │ ├── login_spec.rb # Login flow
@@ -30,6 +32,8 @@ src/
 ├── base_page.rb # Base wrapper for Capybara DSL
 ├── login_page.rb # Login page actions
 └── tasks_page.rb # Tasks page actions (predicates & helpers)
+
+```
 
 ## ⚙️ Setup
 
